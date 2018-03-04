@@ -19,7 +19,7 @@
 
 import XCTest
 
-class eduFreshUITests: XCTestCase {
+class coWeaveUITests: XCTestCase {
 
     override func setUp() {
         super.setUp()

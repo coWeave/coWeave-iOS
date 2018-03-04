@@ -45,6 +45,20 @@
 		05C87EFE1FC0F0840009E7E4 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C87EFD1FC0F0840009E7E4 /* Bundle.swift */; };
 		05C87F001FC0F16C0009E7E4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05C87EFF1FC0F16B0009E7E4 /* GoogleService-Info.plist */; };
 		05D659251FBCDB61009019A9 /* coWeave.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05D659231FBCDB61009019A9 /* coWeave.xcdatamodeld */; };
+		05D8373B204C7C51005AA87D /* GoogleToolboxForMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05D83743204C7C51005AA87D /* GoogleToolboxForMac.framework */; };
+		05D8373C204C7C51005AA87D /* GTMSessionFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05D83744204C7C51005AA87D /* GTMSessionFetcher.framework */; };
+		05D8373D204C7C51005AA87D /* iOSPhotoEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05D83745204C7C51005AA87D /* iOSPhotoEditor.framework */; };
+		05D8373E204C7C51005AA87D /* Localize_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05D83746204C7C51005AA87D /* Localize_Swift.framework */; };
+		05D8373F204C7C51005AA87D /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05D83747204C7C51005AA87D /* nanopb.framework */; };
+		05D83741204C7C51005AA87D /* Protobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05D83749204C7C51005AA87D /* Protobuf.framework */; };
+		05D83742204C7C51005AA87D /* Zip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05D8374A204C7C51005AA87D /* Zip.framework */; };
+		05D8374B204C7C57005AA87D /* GoogleToolboxForMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05D83753204C7C57005AA87D /* GoogleToolboxForMac.framework */; };
+		05D8374C204C7C57005AA87D /* GTMSessionFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05D83754204C7C57005AA87D /* GTMSessionFetcher.framework */; };
+		05D8374D204C7C57005AA87D /* iOSPhotoEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05D83755204C7C57005AA87D /* iOSPhotoEditor.framework */; };
+		05D8374E204C7C57005AA87D /* Localize_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05D83756204C7C57005AA87D /* Localize_Swift.framework */; };
+		05D8374F204C7C57005AA87D /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05D83757204C7C57005AA87D /* nanopb.framework */; };
+		05D83751204C7C57005AA87D /* Protobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05D83759204C7C57005AA87D /* Protobuf.framework */; };
+		05D83752204C7C57005AA87D /* Zip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05D8375A204C7C57005AA87D /* Zip.framework */; };
 		05F10D3A1FC0FAB80010F718 /* GoogleToolboxForMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F10D3D1FC0FAB80010F718 /* GoogleToolboxForMac.framework */; };
 		05F10D3B1FC0FAB80010F718 /* Localize_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F10D3E1FC0FAB80010F718 /* Localize_Swift.framework */; };
 		05F10D3C1FC0FAB80010F718 /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F10D3F1FC0FAB80010F718 /* nanopb.framework */; };
@@ -60,6 +74,9 @@
 		05F70E4A1FBCF1FB007FD9E4 /* Group+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F70E401FBCF1FB007FD9E4 /* Group+CoreDataProperties.swift */; };
 		05F70E4B1FBCF1FB007FD9E4 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F70E411FBCF1FB007FD9E4 /* User+CoreDataClass.swift */; };
 		05F70E4C1FBCF1FB007FD9E4 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F70E421FBCF1FB007FD9E4 /* User+CoreDataProperties.swift */; };
+		196E91C88B1F65655F0D0FCA /* Pods_coWeaveTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE6F288A4D9A25A4A21B71DE /* Pods_coWeaveTests.framework */; };
+		5EC1B95700C954AA274A734C /* Pods_coWeave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05D83758204C7C57005AA87D /* Pods_coWeave.framework */; };
+		9C3D9D69500E599A3B7854CA /* Pods_coWeaveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD31AD36C733E32D188F60BF /* Pods_coWeaveUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,14 +85,14 @@
 			containerPortal = 056C70D91FBB496D00E79CA1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 056C70E01FBB496D00E79CA1;
-			remoteInfo = eduFresh;
+			remoteInfo = coWeave;
 		};
 		056C71041FBB496D00E79CA1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 056C70D91FBB496D00E79CA1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 056C70E01FBB496D00E79CA1;
-			remoteInfo = eduFresh;
+			remoteInfo = coWeave;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -132,6 +149,24 @@
 		05C87EFD1FC0F0840009E7E4 /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		05C87EFF1FC0F16B0009E7E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		05D659241FBCDB61009019A9 /* coWeave1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = coWeave1.xcdatamodel; sourceTree = "<group>"; };
+		05D83743204C7C51005AA87D /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05D83744204C7C51005AA87D /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GTMSessionFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05D83745204C7C51005AA87D /* iOSPhotoEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSPhotoEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05D83746204C7C51005AA87D /* Localize_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Localize_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05D83747204C7C51005AA87D /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05D83748204C7C51005AA87D /* Pods_coWeave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_coWeave.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05D83749204C7C51005AA87D /* Protobuf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Protobuf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05D8374A204C7C51005AA87D /* Zip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Zip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05D83753204C7C57005AA87D /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05D83754204C7C57005AA87D /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GTMSessionFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05D83755204C7C57005AA87D /* iOSPhotoEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSPhotoEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05D83756204C7C57005AA87D /* Localize_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Localize_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05D83757204C7C57005AA87D /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05D83758204C7C57005AA87D /* Pods_coWeave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_coWeave.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05D83759204C7C57005AA87D /* Protobuf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Protobuf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05D8375A204C7C57005AA87D /* Zip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Zip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05D8375B204C8219005AA87D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		05D8375C204C821E005AA87D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		05F10D3D1FC0FAB80010F718 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		05F10D3E1FC0FAB80010F718 /* Localize_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Localize_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		05F10D3F1FC0FAB80010F718 /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,9 +188,15 @@
 		05F70E401FBCF1FB007FD9E4 /* Group+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		05F70E411FBCF1FB007FD9E4 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		05F70E421FBCF1FB007FD9E4 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		066E59F920213C170A235816 /* Pods-coWeaveUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coWeaveUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-coWeaveUITests/Pods-coWeaveUITests.release.xcconfig"; sourceTree = "<group>"; };
+		146D6B45FD923C3BDEB3902D /* Pods-coWeaveUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coWeaveUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-coWeaveUITests/Pods-coWeaveUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		27812ACE813772DA02A88A77 /* Pods-coWeaveTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coWeaveTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-coWeaveTests/Pods-coWeaveTests.release.xcconfig"; sourceTree = "<group>"; };
 		2B4B8229BD6A7CAE0079CD1D /* Pods_coWeave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_coWeave.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A67D0AC5A03BF14CCF6EB1D /* Pods-coWeave.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coWeave.release.xcconfig"; path = "Pods/Target Support Files/Pods-coWeave/Pods-coWeave.release.xcconfig"; sourceTree = "<group>"; };
+		C888BE81594614F3197F08BF /* Pods-coWeaveTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coWeaveTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-coWeaveTests/Pods-coWeaveTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CD31AD36C733E32D188F60BF /* Pods_coWeaveUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_coWeaveUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7977491B759A23494D3945D /* Pods-coWeave.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coWeave.debug.xcconfig"; path = "Pods/Target Support Files/Pods-coWeave/Pods-coWeave.debug.xcconfig"; sourceTree = "<group>"; };
+		EE6F288A4D9A25A4A21B71DE /* Pods_coWeaveTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_coWeaveTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +211,7 @@
 				05F10D3B1FC0FAB80010F718 /* Localize_Swift.framework in Frameworks */,
 				05F10D3C1FC0FAB80010F718 /* nanopb.framework in Frameworks */,
 				0547AC361FBCC39600432850 /* iOSPhotoEditor.framework in Frameworks */,
+				5EC1B95700C954AA274A734C /* Pods_coWeave.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +219,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05D8373B204C7C51005AA87D /* GoogleToolboxForMac.framework in Frameworks */,
+				05D8373C204C7C51005AA87D /* GTMSessionFetcher.framework in Frameworks */,
+				05D8373D204C7C51005AA87D /* iOSPhotoEditor.framework in Frameworks */,
+				05D8373E204C7C51005AA87D /* Localize_Swift.framework in Frameworks */,
+				05D8373F204C7C51005AA87D /* nanopb.framework in Frameworks */,
+				05D83741204C7C51005AA87D /* Protobuf.framework in Frameworks */,
+				05D83742204C7C51005AA87D /* Zip.framework in Frameworks */,
+				196E91C88B1F65655F0D0FCA /* Pods_coWeaveTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +234,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05D8374B204C7C57005AA87D /* GoogleToolboxForMac.framework in Frameworks */,
+				05D8374C204C7C57005AA87D /* GTMSessionFetcher.framework in Frameworks */,
+				05D8374D204C7C57005AA87D /* iOSPhotoEditor.framework in Frameworks */,
+				05D8374E204C7C57005AA87D /* Localize_Swift.framework in Frameworks */,
+				05D8374F204C7C57005AA87D /* nanopb.framework in Frameworks */,
+				05D83751204C7C57005AA87D /* Protobuf.framework in Frameworks */,
+				05D83752204C7C57005AA87D /* Zip.framework in Frameworks */,
+				9C3D9D69500E599A3B7854CA /* Pods_coWeaveUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +336,7 @@
 		056C70FB1FBB496D00E79CA1 /* coWeaveTests */ = {
 			isa = PBXGroup;
 			children = (
+				05D8375B204C8219005AA87D /* GoogleService-Info.plist */,
 				056C70FC1FBB496D00E79CA1 /* coWeaveTests.swift */,
 				056C70FE1FBB496D00E79CA1 /* Info.plist */,
 			);
@@ -287,6 +346,7 @@
 		056C71061FBB496D00E79CA1 /* coWeaveUITests */ = {
 			isa = PBXGroup;
 			children = (
+				05D8375C204C821E005AA87D /* GoogleService-Info.plist */,
 				056C71071FBB496D00E79CA1 /* coWeaveUITests.swift */,
 				056C71091FBB496D00E79CA1 /* Info.plist */,
 			);
@@ -346,8 +406,7 @@
 				05D659511FBCDC02009019A9 /* Group */,
 				05D659521FBCDC08009019A9 /* User */,
 			);
-			name = Model;
-			path = "Model";
+			path = Model;
 			sourceTree = "<group>";
 		};
 		05D6594F1FBCDBF1009019A9 /* Document */ = {
@@ -400,6 +459,10 @@
 			children = (
 				E7977491B759A23494D3945D /* Pods-coWeave.debug.xcconfig */,
 				4A67D0AC5A03BF14CCF6EB1D /* Pods-coWeave.release.xcconfig */,
+				C888BE81594614F3197F08BF /* Pods-coWeaveTests.debug.xcconfig */,
+				27812ACE813772DA02A88A77 /* Pods-coWeaveTests.release.xcconfig */,
+				146D6B45FD923C3BDEB3902D /* Pods-coWeaveUITests.debug.xcconfig */,
+				066E59F920213C170A235816 /* Pods-coWeaveUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -407,6 +470,22 @@
 		FAEF7FE42CBCC25352F453F3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				05D83753204C7C57005AA87D /* GoogleToolboxForMac.framework */,
+				05D83754204C7C57005AA87D /* GTMSessionFetcher.framework */,
+				05D83755204C7C57005AA87D /* iOSPhotoEditor.framework */,
+				05D83756204C7C57005AA87D /* Localize_Swift.framework */,
+				05D83757204C7C57005AA87D /* nanopb.framework */,
+				05D83758204C7C57005AA87D /* Pods_coWeave.framework */,
+				05D83759204C7C57005AA87D /* Protobuf.framework */,
+				05D8375A204C7C57005AA87D /* Zip.framework */,
+				05D83743204C7C51005AA87D /* GoogleToolboxForMac.framework */,
+				05D83744204C7C51005AA87D /* GTMSessionFetcher.framework */,
+				05D83745204C7C51005AA87D /* iOSPhotoEditor.framework */,
+				05D83746204C7C51005AA87D /* Localize_Swift.framework */,
+				05D83747204C7C51005AA87D /* nanopb.framework */,
+				05D83748204C7C51005AA87D /* Pods_coWeave.framework */,
+				05D83749204C7C51005AA87D /* Protobuf.framework */,
+				05D8374A204C7C51005AA87D /* Zip.framework */,
 				052772D61FCDE266003F4042 /* Zip.framework */,
 				052772D21FCDBF33003F4042 /* GTMSessionFetcher.framework */,
 				052772D31FCDBF33003F4042 /* Protobuf.framework */,
@@ -417,6 +496,8 @@
 				0547AC371FBCC39600432850 /* iOSPhotoEditor.framework */,
 				0547AC351FBCC39200432850 /* Pods_coWeave.framework */,
 				2B4B8229BD6A7CAE0079CD1D /* Pods_coWeave.framework */,
+				EE6F288A4D9A25A4A21B71DE /* Pods_coWeaveTests.framework */,
+				CD31AD36C733E32D188F60BF /* Pods_coWeaveUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -441,7 +522,7 @@
 			dependencies = (
 			);
 			name = coWeave;
-			productName = eduFresh;
+			productName = coWeave;
 			productReference = 056C70E11FBB496D00E79CA1 /* coWeave.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -449,9 +530,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 056C710F1FBB496D00E79CA1 /* Build configuration list for PBXNativeTarget "coWeaveTests" */;
 			buildPhases = (
+				92CCD8ADC286B866F9F12A1B /* [CP] Check Pods Manifest.lock */,
 				056C70F41FBB496D00E79CA1 /* Sources */,
 				056C70F51FBB496D00E79CA1 /* Frameworks */,
 				056C70F61FBB496D00E79CA1 /* Resources */,
+				F142C3B39DE668B74568098D /* [CP] Embed Pods Frameworks */,
+				3F0D6204487CAFF34A8DD0D8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -459,7 +543,7 @@
 				056C70FA1FBB496D00E79CA1 /* PBXTargetDependency */,
 			);
 			name = coWeaveTests;
-			productName = eduFreshTests;
+			productName = coWeaveTests;
 			productReference = 056C70F81FBB496D00E79CA1 /* coWeaveTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -467,9 +551,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 056C71121FBB496D00E79CA1 /* Build configuration list for PBXNativeTarget "coWeaveUITests" */;
 			buildPhases = (
+				35650A47BBFF5FA72BC59962 /* [CP] Check Pods Manifest.lock */,
 				056C70FF1FBB496D00E79CA1 /* Sources */,
 				056C71001FBB496D00E79CA1 /* Frameworks */,
 				056C71011FBB496D00E79CA1 /* Resources */,
+				5E537632F57ED1F3B77D3597 /* [CP] Embed Pods Frameworks */,
+				41B32F4B078BD5CBFB19CA22 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -477,7 +564,7 @@
 				056C71051FBB496D00E79CA1 /* PBXTargetDependency */,
 			);
 			name = coWeaveUITests;
-			productName = eduFreshUITests;
+			productName = coWeaveUITests;
 			productReference = 056C71031FBB496D00E79CA1 /* coWeaveUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
@@ -499,7 +586,6 @@
 					056C70F71FBB496D00E79CA1 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
-						TestTargetID = 056C70E01FBB496D00E79CA1;
 					};
 					056C71021FBB496D00E79CA1 = {
 						CreatedOnToolsVersion = 9.1;
@@ -591,6 +677,39 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-coWeave/Pods-coWeave-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		35650A47BBFF5FA72BC59962 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-coWeaveUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3F0D6204487CAFF34A8DD0D8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-coWeaveTests/Pods-coWeaveTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		416EC412C431069495F065B9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -621,6 +740,51 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-coWeave/Pods-coWeave-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		41B32F4B078BD5CBFB19CA22 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-coWeaveUITests/Pods-coWeaveUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E537632F57ED1F3B77D3597 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-coWeaveUITests/Pods-coWeaveUITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/Zip/Zip.framework",
+				"${BUILT_PRODUCTS_DIR}/iOSPhotoEditor/iOSPhotoEditor.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Localize_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Zip.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iOSPhotoEditor.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-coWeaveUITests/Pods-coWeaveUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		879AEA76563C42520868FB0F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -637,6 +801,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92CCD8ADC286B866F9F12A1B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-coWeaveTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F142C3B39DE668B74568098D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-coWeaveTests/Pods-coWeaveTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/Zip/Zip.framework",
+				"${BUILT_PRODUCTS_DIR}/iOSPhotoEditor/iOSPhotoEditor.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Localize_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Zip.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iOSPhotoEditor.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-coWeaveTests/Pods-coWeaveTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -877,6 +1089,20 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 82T63N97ZX;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_ROOT}/Firebase/Core/Sources",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Crashlytics\"",
+					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
+					"\"${PODS_ROOT}/Firebase/Core/Sources\"",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAnalytics\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseCore\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseInstanceID\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebasePerformance\"",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/coWeave/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -898,6 +1124,20 @@
 					"$(inherited)",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/iOSPhotoEditor\"",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_ROOT}/Firebase/Core/Sources",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Crashlytics\"",
+					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
+					"\"${PODS_ROOT}/Firebase/Core/Sources\"",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAnalytics\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseCore\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseInstanceID\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebasePerformance\"",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/coWeave/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -910,67 +1150,71 @@
 		};
 		056C71101FBB496D00E79CA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C888BE81594614F3197F08BF /* Pods-coWeaveTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 82T63N97ZX;
-				INFOPLIST_FILE = eduFreshTests/Info.plist;
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = coWeaveTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = lu.fresh.eduFreshTests;
+				PRODUCT_BUNDLE_IDENTIFIER = lu.coweave.app.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/coWeave.app/coWeave";
 			};
 			name = Debug;
 		};
 		056C71111FBB496D00E79CA1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27812ACE813772DA02A88A77 /* Pods-coWeaveTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 82T63N97ZX;
-				INFOPLIST_FILE = eduFreshTests/Info.plist;
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = coWeaveTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = lu.fresh.eduFreshTests;
+				PRODUCT_BUNDLE_IDENTIFIER = lu.coweave.app.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/coWeave.app/coWeave";
 			};
 			name = Release;
 		};
 		056C71131FBB496D00E79CA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 146D6B45FD923C3BDEB3902D /* Pods-coWeaveUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 82T63N97ZX;
-				INFOPLIST_FILE = eduFreshUITests/Info.plist;
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = coWeaveUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = lu.fresh.eduFreshUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = lu.coweave.app.uitests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = eduFresh;
+				TEST_TARGET_NAME = coWeave;
 			};
 			name = Debug;
 		};
 		056C71141FBB496D00E79CA1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 066E59F920213C170A235816 /* Pods-coWeaveUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 82T63N97ZX;
-				INFOPLIST_FILE = eduFreshUITests/Info.plist;
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = coWeaveUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = lu.fresh.eduFreshUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = lu.coweave.app.uitests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = eduFresh;
+				TEST_TARGET_NAME = coWeave;
 			};
 			name = Release;
 		};

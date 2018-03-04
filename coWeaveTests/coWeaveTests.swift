@@ -18,9 +18,9 @@
  */
 
 import XCTest
-@testable import eduFresh
+@testable import coWeave
 
-class eduFreshTests: XCTestCase {
+class coWeaveTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
