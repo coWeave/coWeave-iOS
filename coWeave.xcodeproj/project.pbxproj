@@ -165,8 +165,6 @@
 		05D83758204C7C57005AA87D /* Pods_coWeave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_coWeave.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		05D83759204C7C57005AA87D /* Protobuf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Protobuf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		05D8375A204C7C57005AA87D /* Zip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Zip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		05D8375B204C8219005AA87D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		05D8375C204C821E005AA87D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		05F10D3D1FC0FAB80010F718 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		05F10D3E1FC0FAB80010F718 /* Localize_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Localize_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		05F10D3F1FC0FAB80010F718 /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -336,7 +334,6 @@
 		056C70FB1FBB496D00E79CA1 /* coWeaveTests */ = {
 			isa = PBXGroup;
 			children = (
-				05D8375B204C8219005AA87D /* GoogleService-Info.plist */,
 				056C70FC1FBB496D00E79CA1 /* coWeaveTests.swift */,
 				056C70FE1FBB496D00E79CA1 /* Info.plist */,
 			);
@@ -346,7 +343,6 @@
 		056C71061FBB496D00E79CA1 /* coWeaveUITests */ = {
 			isa = PBXGroup;
 			children = (
-				05D8375C204C821E005AA87D /* GoogleService-Info.plist */,
 				056C71071FBB496D00E79CA1 /* coWeaveUITests.swift */,
 				056C71091FBB496D00E79CA1 /* Info.plist */,
 			);

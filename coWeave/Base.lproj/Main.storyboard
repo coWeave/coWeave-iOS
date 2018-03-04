@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jrt-XD-lqN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jrt-XD-lqN">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -35,6 +35,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="off-Ff-CEp">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                        <accessibility key="accessibilityConfiguration" label="Add"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="WzX-r3-x6g"/>
                                             <constraint firstAttribute="height" constant="200" id="rnV-ea-xo9"/>
@@ -54,6 +55,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMw-Yq-UwW">
                                         <rect key="frame" x="0.0" y="250" width="200" height="50"/>
+                                        <accessibility key="accessibilityConfiguration" label="Open"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="N95-U9-p7E"/>
                                             <constraint firstAttribute="width" constant="200" id="t8H-al-FDx"/>
@@ -160,6 +162,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fa4-42-U3E">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                <accessibility key="accessibilityConfiguration" label="Camera"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="ay7-J5-aeR"/>
                                                     <constraint firstAttribute="width" constant="100" id="dPK-1j-QLR"/>
@@ -178,6 +181,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nff-Ji-2aN">
                                                 <rect key="frame" x="110" y="0.0" width="100" height="100"/>
+                                                <accessibility key="accessibilityConfiguration" label="Gallery"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="hTf-Xy-UT0"/>
                                                     <constraint firstAttribute="width" constant="100" id="mwr-1K-eCd"/>
@@ -196,6 +200,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhJ-ga-TFf">
                                                 <rect key="frame" x="220" y="0.0" width="100" height="100"/>
+                                                <accessibility key="accessibilityConfiguration" label="Microphone"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="EAh-IO-gbI"/>
                                                     <constraint firstAttribute="width" constant="100" id="Sgq-GJ-q9q"/>
@@ -219,6 +224,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3HV-Eb-zD2">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                <accessibility key="accessibilityConfiguration" label="Draw"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="1xy-Yk-70e"/>
                                                     <constraint firstAttribute="height" constant="100" id="tll-T7-deC"/>
@@ -237,6 +243,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOZ-EV-ybp">
                                                 <rect key="frame" x="110" y="0.0" width="100" height="100"/>
+                                                <accessibility key="accessibilityConfiguration" label="Text"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="7w6-uk-ds6"/>
                                                     <constraint firstAttribute="height" constant="100" id="Lig-6h-ksm"/>
@@ -253,6 +260,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJb-Ha-2Qr">
                                                 <rect key="frame" x="220" y="0.0" width="100" height="100"/>
+                                                <accessibility key="accessibilityConfiguration" label="Delete"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="1Q2-n0-xAX"/>
                                                     <constraint firstAttribute="height" constant="100" id="9hW-6p-pph"/>
@@ -1485,6 +1493,7 @@ Icons from icons8.com</string>
         <image name="yellowCircle" width="995" height="995"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="aY6-DC-Vop"/>
         <segue reference="XpD-MD-kjc"/>
         <segue reference="GML-Qg-vpG"/>
     </inferredMetricsTieBreakers>
