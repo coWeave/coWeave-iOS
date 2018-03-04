@@ -32,7 +32,7 @@ class FileImport: NSObject {
         case template = "template"
         case firstPage = "firstPage"
         case lastPage = "lastPage"
-        case pages = "pages"¬
+        case pages = "pages"
         case user = "user"
         case group = "group"
         case image = "image"

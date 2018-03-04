@@ -347,7 +347,7 @@
 				05D659521FBCDC08009019A9 /* User */,
 			);
 			name = Model;
-			path = "New Group";
+			path = "Model";
 			sourceTree = "<group>";
 		};
 		05D6594F1FBCDBF1009019A9 /* Document */ = {
