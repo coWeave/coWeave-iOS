@@ -21,8 +21,10 @@ import UIKit
 import CoreData
 import Firebase
 
-class OpenDocumentsTableViewController: UITableViewController {
+class OpenDocumentsTableViewController: UITableViewController, UISearchBarDelegate {
     var managedObjectContext: NSManagedObjectContext!
+    private var search = ""
+    @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var orderButton: UIBarButtonItem!
     
     lazy var fetchedResultsController: NSFetchedResultsController<Document> = {
@@ -47,7 +49,7 @@ class OpenDocumentsTableViewController: UITableViewController {
         super.viewDidLoad()
         self.navigationItem.title = NSLocalizedString("Documents", comment: "")
         self.tableView.rowHeight = 175.0
-
+        self.searchBar.endEditing(true)
         do {
             try self.fetchedResultsController.performFetch()
         } catch {
@@ -229,6 +231,53 @@ class OpenDocumentsTableViewController: UITableViewController {
             // Present the controller
             self.present(alertController, animated: true, completion: nil)
         }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        print("searchText \(String(describing: searchBar.text))")
+        self.search(searchString: searchBar.text!)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("searchText \(String(describing: searchBar.text))")
+        self.search(searchString: searchBar.text!)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        print("searchText \(String(describing: searchBar.text))")
+        self.search(searchString: "")
+    }
+    
+    // called when text changes (including clear)
+    internal func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        searchBar.resignFirstResponder()
+        searchBar.text = ""
+        fetchedResultsController.fetchRequest.predicate = nil
+        do {
+            try self.fetchedResultsController.performFetch()
+        } catch {
+            let fetchError = error as NSError
+            print("\(fetchError), \(fetchError.userInfo)")
+        }
+        tableView.reloadData()
+    }
+    
+    
+    func search(searchString: String) {
+        self.search = searchString
+        var predicate:NSPredicate? = nil
+        if searchString.count != 0 {
+            predicate = NSPredicate(format: "(name BEGINSWITH [c] %@) OR (name CONTAINS [c] %@)", searchString, searchString)
+        }
+        fetchedResultsController.fetchRequest.predicate = predicate
+        do {
+            try self.fetchedResultsController.performFetch()
+        } catch {
+            let fetchError = error as NSError
+            print("\(fetchError), \(fetchError.userInfo)")
+        }
+        self.tableView.reloadData()
     }
 
     @IBAction func orderAction(_ sender: Any) {

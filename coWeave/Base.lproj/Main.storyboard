@@ -749,17 +749,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="N9c-Ix-Z9B">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="prominent" placeholder="Search Document Name..." translucent="NO" id="N9c-Ix-Z9B">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="barTintColor" red="0.54901960780000003" green="0.77647058820000003" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <textInputTraits key="textInputTraits"/>
+                            <scopeButtonTitles>
+                                <string>Title</string>
+                                <string>Title</string>
+                            </scopeButtonTitles>
                             <connections>
                                 <outlet property="delegate" destination="HdL-jE-nDp" id="YSY-Jk-D2t"/>
                             </connections>
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="Document" rowHeight="99.999999999999972" id="beu-d3-6fJ" customClass="DocumentsTableViewCell" customModule="coWeave" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="99.333333333333343" width="414" height="100"/>
+                                <rect key="frame" x="0.0" y="111.33333333333334" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="beu-d3-6fJ" id="lc5-je-vUU">
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="99.666666666666671"/>
@@ -815,7 +820,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="DocumentUser" rowHeight="129.99999999999994" id="eDt-sN-lNg" customClass="DocumentsTableViewCell" customModule="coWeave" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="199.33333333333337" width="414" height="130"/>
+                                <rect key="frame" x="0.0" y="211.33333333333337" width="414" height="130"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eDt-sN-lNg" id="mkw-XW-Fmp">
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="129.66666666666666"/>
@@ -905,6 +910,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="orderButton" destination="Lff-Z6-AVD" id="6fn-ys-OeF"/>
+                        <outlet property="searchBar" destination="N9c-Ix-Z9B" id="0lN-sY-xzf"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jzu-Md-qe4" userLabel="First Responder" sceneMemberID="firstResponder"/>
