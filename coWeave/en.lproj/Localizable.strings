@@ -63,4 +63,5 @@
 "add-page-between" = "Add a page between this page and the next page?";
 "add-page" = "Add page";
 "export-format" = "Choose format to export:";
+"order-action" = "Order actions";
 

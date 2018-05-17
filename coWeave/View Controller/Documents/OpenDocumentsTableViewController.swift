@@ -23,7 +23,8 @@ import Firebase
 
 class OpenDocumentsTableViewController: UITableViewController {
     var managedObjectContext: NSManagedObjectContext!
-
+    @IBOutlet var orderButton: UIBarButtonItem!
+    
     lazy var fetchedResultsController: NSFetchedResultsController<Document> = {
         // Initialize Fetch Request
         let fetchRequest: NSFetchRequest<Document> = Document.fetchRequest()
@@ -33,7 +34,7 @@ class OpenDocumentsTableViewController: UITableViewController {
         let name = NSSortDescriptor(key: "name", ascending: false)
         fetchRequest.sortDescriptors = [date, name]
 
-        fetchRequest.predicate = NSPredicate(format: "user == nil")
+        //fetchRequest.predicate = NSPredicate(format: "user == nil")
 
         // Initialize Fetched Results Controller
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
@@ -44,7 +45,7 @@ class OpenDocumentsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = NSLocalizedString("unassigned-doc", comment: "")
+        self.navigationItem.title = NSLocalizedString("Documents", comment: "")
         self.tableView.rowHeight = 175.0
 
         do {
@@ -89,39 +90,52 @@ class OpenDocumentsTableViewController: UITableViewController {
         return fetchedResultsController.fetchedObjects!.count
     }
 
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    /*override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if (fetchedResultsController.fetchedObjects!.count == 0) {
             return "\(NSLocalizedString("no-documents", comment: ""))\n\n\(NSLocalizedString("documents-info", comment: ""))"
         } else {
             return NSLocalizedString("documents-info", comment: "")
         }
+    }*/
+    
+    override func tableView(_ tableView: UITableView,
+                   heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let document = self.fetchedResultsController.object(at: indexPath) as Document
+        return  (document.user != nil) ? 130.0 : 100.0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Document", for: indexPath) as? DocumentsTableViewCell else {
-            fatalError("The dequeued cell is not an instance of PageTableViewCell.")
-        }
-
         let document = self.fetchedResultsController.object(at: indexPath) as Document
-
         let formatter = DateFormatter()
         // initially set the format based on your datepicker date
         formatter.dateFormat = "dd.MM.yyyy HH:mm:ss"
-
-        cell.pageTitle.text = document.name
-
-        DispatchQueue.main.async(execute: { () -> Void in
-            cell.documentImage.image = (document.firstPage?.image != nil) ? UIImage(data: (document.firstPage?.image!.image!)! as Data, scale: 0.01) : nil
-        })
-
-        cell.author.isHidden = (document.user == nil) ? true : false
-        cell.author.text = (document.user != nil) ? (document.user!.name! + " (" + document.user!.group!.name! + ")") : ""
-        if (document.modifyDate != nil) {
-            cell.pageDate.text = "\(NSLocalizedString("last-opened", comment: "")):\n\(formatter.string(from: document.modifyDate! as Date))\n" + "\(NSLocalizedString("created", comment: "")):\n\(formatter.string(from: document.addedDate! as Date))"
+        if (document.user == nil) {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "Document", for: indexPath) as? DocumentsTableViewCell else {
+                fatalError("The dequeued cell is not an instance of PageTableViewCell.")
+            }
+            cell.pageTitle.text = document.name
+            
+            DispatchQueue.main.async(execute: { () -> Void in
+                cell.documentImage.image = (document.firstPage?.image?.thumbnail != nil) ? UIImage(data: (document.firstPage?.image!.thumbnail!)! as Data, scale: 1) : UIImage(named: "documentPlaceholder")
+            })
+            
+            cell.pageDate.text = "\(formatter.string(from: document.addedDate! as Date))"
+            return cell
         } else {
-            cell.pageDate.text = "\(NSLocalizedString("created", comment: "")):\n\(formatter.string(from: document.addedDate! as Date))"
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "DocumentUser", for: indexPath) as? DocumentsTableViewCell else {
+                fatalError("The dequeued cell is not an instance of PageTableViewCell.")
+            }
+            cell.pageTitle.text = document.name
+            
+            DispatchQueue.main.async(execute: { () -> Void in
+                cell.documentImage.image = (document.firstPage?.image?.thumbnail != nil) ? UIImage(data: (document.firstPage?.image!.thumbnail!)! as Data, scale: 1) : UIImage(named: "documentPlaceholder")
+            })
+            
+            cell.author.text = document.user!.name! + " (" + document.user!.group!.name! + ")"
+            cell.pageDate.text = "\(formatter.string(from: document.addedDate! as Date))"
+            
+            return cell
         }
-        return cell
     }
 
 
@@ -217,10 +231,133 @@ class OpenDocumentsTableViewController: UITableViewController {
         }
     }
 
-
+    @IBAction func orderAction(_ sender: Any) {
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "OpenOrderAction" as NSObject,
+            AnalyticsParameterItemName: "OpenOrderAction" as NSObject,
+            AnalyticsParameterContentType: "document" as NSObject
+            ])
+        
+        let actionSheet: UIAlertController! = UIAlertController(title: nil, message: NSLocalizedString("order-action", comment: ""), preferredStyle: UIAlertControllerStyle.actionSheet)
+        
+        let createdASC = UIAlertAction(title: "Created Date ASC", style: UIAlertActionStyle.default, image: UIImage(named: "order12")!, handler: {
+            (alert: UIAlertAction) -> Void in
+            // Add Sort Descriptors
+            let date = NSSortDescriptor(key: "addedDate", ascending: true)
+            self.fetchedResultsController.fetchRequest.sortDescriptors = [date]
+            do {
+                try self.fetchedResultsController.performFetch()
+            } catch {
+                let fetchError = error as NSError
+                print("\(fetchError), \(fetchError.userInfo)")
+            }
+            self.tableView.reloadData()
+            self.orderButton.image = UIImage(named: "order12")
+        })
+        let createdDESC = UIAlertAction(title: "Created Date DESC", style: UIAlertActionStyle.default, image: UIImage(named: "order21")!, handler: {
+            (alert: UIAlertAction) -> Void in
+            // Add Sort Descriptors
+            let date = NSSortDescriptor(key: "addedDate", ascending: false)
+            self.fetchedResultsController.fetchRequest.sortDescriptors = [date]
+            do {
+                try self.fetchedResultsController.performFetch()
+            } catch {
+                let fetchError = error as NSError
+                print("\(fetchError), \(fetchError.userInfo)")
+            }
+            self.tableView.reloadData()
+            self.orderButton.image = UIImage(named: "order21")
+        })
+        
+        let modifyASC = UIAlertAction(title: "Last opened ASC", style: UIAlertActionStyle.default, image: UIImage(named: "order12")!, handler: {
+            (alert: UIAlertAction) -> Void in
+            // Add Sort Descriptors
+            let date = NSSortDescriptor(key: "modifyDate", ascending: true)
+            self.fetchedResultsController.fetchRequest.sortDescriptors = [date]
+            do {
+                try self.fetchedResultsController.performFetch()
+            } catch {
+                let fetchError = error as NSError
+                print("\(fetchError), \(fetchError.userInfo)")
+            }
+            self.tableView.reloadData()
+            self.orderButton.image = UIImage(named: "order12")
+        })
+        let modifyDESC = UIAlertAction(title: "Last opened DESC", style: UIAlertActionStyle.default, image: UIImage(named: "order21")!, handler: {
+            (alert: UIAlertAction) -> Void in
+            // Add Sort Descriptors
+            let date = NSSortDescriptor(key: "modifyDate", ascending: false)
+            self.fetchedResultsController.fetchRequest.sortDescriptors = [date]
+            do {
+                try self.fetchedResultsController.performFetch()
+            } catch {
+                let fetchError = error as NSError
+                print("\(fetchError), \(fetchError.userInfo)")
+            }
+            self.tableView.reloadData()
+            self.orderButton.image = UIImage(named: "order21")
+        })
+        
+        let titleAZ = UIAlertAction(title: "Title A-Z", style: UIAlertActionStyle.default, image: UIImage(named: "orderAZ")!, handler: {
+            (alert: UIAlertAction) -> Void in
+            // Add Sort Descriptors
+            let date = NSSortDescriptor(key: "name", ascending: false)
+            self.fetchedResultsController.fetchRequest.sortDescriptors = [date]
+            do {
+                try self.fetchedResultsController.performFetch()
+            } catch {
+                let fetchError = error as NSError
+                print("\(fetchError), \(fetchError.userInfo)")
+            }
+            self.tableView.reloadData()
+            self.orderButton.image = UIImage(named: "orderAZ")
+        })
+        
+        let titleZA = UIAlertAction(title: "Title Z-A", style: UIAlertActionStyle.default, image: UIImage(named: "orderZA")!, handler: {
+            (alert: UIAlertAction) -> Void in
+            // Add Sort Descriptors
+            let date = NSSortDescriptor(key: "name", ascending: true)
+            self.fetchedResultsController.fetchRequest.sortDescriptors = [date]
+            do {
+                try self.fetchedResultsController.performFetch()
+            } catch {
+                let fetchError = error as NSError
+                print("\(fetchError), \(fetchError.userInfo)")
+            }
+            self.tableView.reloadData()
+            self.orderButton.image = UIImage(named: "orderZA")
+        })
+        
+        let cancelAction = UIAlertAction(title: NSLocalizedString("cancel", comment: ""), style: UIAlertActionStyle.cancel, handler: {
+            (alert: UIAlertAction) -> Void in
+        })
+        
+        actionSheet.addAction(createdASC)
+        actionSheet.addAction(createdDESC)
+        actionSheet.addAction(modifyASC)
+        actionSheet.addAction(modifyDESC)
+        actionSheet.addAction(titleAZ)
+        actionSheet.addAction(titleZA)
+        actionSheet.addAction(cancelAction)
+        
+        if let popoverController = actionSheet.popoverPresentationController {
+            popoverController.sourceView = orderButton.customView
+            popoverController.sourceRect = (orderButton.customView?.bounds)!
+        }
+        self.present(actionSheet, animated: true, completion: {
+            
+        })
+    }
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "open") {
+            let classVc = segue.destination as! DocumentDetailNavigationViewController
+            classVc.managedObjectContext = self.managedObjectContext
+            let doc = self.fetchedResultsController.object(at: tableView.indexPathForSelectedRow!)
+            classVc.document = doc
+        }
+        if (segue.identifier == "openUser") {
             let classVc = segue.destination as! DocumentDetailNavigationViewController
             classVc.managedObjectContext = self.managedObjectContext
             let doc = self.fetchedResultsController.object(at: tableView.indexPathForSelectedRow!)

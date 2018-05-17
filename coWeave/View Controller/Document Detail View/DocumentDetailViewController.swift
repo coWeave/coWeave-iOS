@@ -488,6 +488,10 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
                 self.image = UIImage(data: page.image!.image! as Data, scale: 1.0)
                 self.backgroundImageView.image = self.image
                 self.pageImage = page.image!
+                
+                if (self.pageImage.thumbnail == nil) {
+                    self.updateImageThumbnail(imageValue: self.image, image: self.pageImage)
+                }
             }
             self.updateImageControls(image: self.pageImage)
             self.loadAudio(page: page)
@@ -647,6 +651,7 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
 
         image.addedDate = NSDate()
         image.image = imageData
+        image.thumbnail = UIImagePNGRepresentation(resizeImage(image: imageValue, newWidth: 75))! as NSData
         image.previous = previous
         image.page = page
 
@@ -662,6 +667,32 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
             print("\(saveError), \(saveError.userInfo)")
         }
         return image
+    }
+    
+    func updateImageThumbnail(imageValue: UIImage, image: Image) {
+        image.thumbnail = UIImagePNGRepresentation(resizeImage(image: imageValue, newWidth: 75))! as NSData
+       
+        do {
+            // Save Record
+            try image.managedObjectContext?.save()
+        } catch {
+            let saveError = error as NSError
+            print("\(saveError), \(saveError.userInfo)")
+        }
+    }
+    
+    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
+        
+        let scale = newWidth / image.size.width
+        let newHeight = image.size.height * scale
+        
+        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+        
+        image.draw(in: CGRect(x: 0, y: 0,width: newWidth, height: newHeight))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
     }
 
     /**
