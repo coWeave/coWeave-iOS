@@ -31,6 +31,7 @@ class PreviewViewController: UIViewController, UINavigationControllerDelegate, U
     var pageImage: Image! = nil
     var pageNumber: Int16 = 1
     var managedObjectContext: NSManagedObjectContext!
+    var swipeGesture  = UISwipeGestureRecognizer()
     /**
      *  Audio Recorder
      */
@@ -71,6 +72,29 @@ class PreviewViewController: UIViewController, UINavigationControllerDelegate, U
         
         self.navigationItem.title = document?.name!
         updatePageControls(page: page)
+        
+        let directions: [UISwipeGestureRecognizerDirection] = [.right, .left]
+        for direction in directions {
+            swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(self.swipe(_:)))
+            backgroundImageView.addGestureRecognizer(swipeGesture)
+            swipeGesture.direction = direction
+            backgroundImageView.isUserInteractionEnabled = true
+            backgroundImageView.isMultipleTouchEnabled = true
+        }
+    }
+    
+    func swipe(_ sender : UISwipeGestureRecognizer){
+        if sender.direction == .right {
+            print("right")
+            if (page.previous != nil) {
+                self.previousPage(_sender: self.backgroundImageView)
+            }
+        }else if sender.direction == .left{
+            print("left")
+            if (page.next != nil) {
+                self.nextPage(_sender: self.backgroundImageView)
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
