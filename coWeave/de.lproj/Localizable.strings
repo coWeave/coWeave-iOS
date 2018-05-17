@@ -64,3 +64,6 @@
 "add-page" = "Seite einfügen";
 "export-format" = "Wählen Sie das Format:";
 "order-action" = "Ordnen";
+"oldest-first" = "Älteste zuerst";
+"newest-first" = "Neueste zuerst";
+"last-opened" = "Zuletzt geöffnet";

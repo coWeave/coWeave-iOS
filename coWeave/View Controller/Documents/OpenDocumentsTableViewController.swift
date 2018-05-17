@@ -311,7 +311,7 @@ class OpenDocumentsTableViewController: UITableViewController, UISearchBarDelega
         
         let actionSheet: UIAlertController! = UIAlertController(title: nil, message: NSLocalizedString("order-action", comment: ""), preferredStyle: UIAlertControllerStyle.actionSheet)
         
-        let createdASC = UIAlertAction(title: "Created Date ASC", style: UIAlertActionStyle.default, image: UIImage(named: "order12")!, handler: {
+        let createdASC = UIAlertAction(title: NSLocalizedString("oldest-first", comment: ""), style: UIAlertActionStyle.default, image: UIImage(named: "order12")!, handler: {
             (alert: UIAlertAction) -> Void in
             // Add Sort Descriptors
             let date = NSSortDescriptor(key: "addedDate", ascending: true)
@@ -325,7 +325,7 @@ class OpenDocumentsTableViewController: UITableViewController, UISearchBarDelega
             self.tableView.reloadData()
             self.orderButton.image = UIImage(named: "order12")
         })
-        let createdDESC = UIAlertAction(title: "Created Date DESC", style: UIAlertActionStyle.default, image: UIImage(named: "order21")!, handler: {
+        let createdDESC = UIAlertAction(title: NSLocalizedString("newest-first", comment: ""), style: UIAlertActionStyle.default, image: UIImage(named: "order21")!, handler: {
             (alert: UIAlertAction) -> Void in
             // Add Sort Descriptors
             let date = NSSortDescriptor(key: "addedDate", ascending: false)
@@ -340,21 +340,7 @@ class OpenDocumentsTableViewController: UITableViewController, UISearchBarDelega
             self.orderButton.image = UIImage(named: "order21")
         })
         
-        let modifyASC = UIAlertAction(title: "Last opened ASC", style: UIAlertActionStyle.default, image: UIImage(named: "order12")!, handler: {
-            (alert: UIAlertAction) -> Void in
-            // Add Sort Descriptors
-            let date = NSSortDescriptor(key: "modifyDate", ascending: true)
-            self.fetchedResultsController.fetchRequest.sortDescriptors = [date]
-            do {
-                try self.fetchedResultsController.performFetch()
-            } catch {
-                let fetchError = error as NSError
-                print("\(fetchError), \(fetchError.userInfo)")
-            }
-            self.tableView.reloadData()
-            self.orderButton.image = UIImage(named: "order12")
-        })
-        let modifyDESC = UIAlertAction(title: "Last opened DESC", style: UIAlertActionStyle.default, image: UIImage(named: "order21")!, handler: {
+        let modifyASC = UIAlertAction(title: NSLocalizedString("last-opened", comment: ""), style: UIAlertActionStyle.default, image: UIImage(named: "order12")!, handler: {
             (alert: UIAlertAction) -> Void in
             // Add Sort Descriptors
             let date = NSSortDescriptor(key: "modifyDate", ascending: false)
@@ -366,10 +352,10 @@ class OpenDocumentsTableViewController: UITableViewController, UISearchBarDelega
                 print("\(fetchError), \(fetchError.userInfo)")
             }
             self.tableView.reloadData()
-            self.orderButton.image = UIImage(named: "order21")
+            self.orderButton.image = UIImage(named: "order12")
         })
         
-        let titleAZ = UIAlertAction(title: "Title A-Z", style: UIAlertActionStyle.default, image: UIImage(named: "orderAZ")!, handler: {
+        let titleAZ = UIAlertAction(title: NSLocalizedString("title", comment: ""), style: UIAlertActionStyle.default, image: UIImage(named: "orderAZ")!, handler: {
             (alert: UIAlertAction) -> Void in
             // Add Sort Descriptors
             let date = NSSortDescriptor(key: "name", ascending: false)
@@ -384,7 +370,7 @@ class OpenDocumentsTableViewController: UITableViewController, UISearchBarDelega
             self.orderButton.image = UIImage(named: "orderAZ")
         })
         
-        let titleZA = UIAlertAction(title: "Title Z-A", style: UIAlertActionStyle.default, image: UIImage(named: "orderZA")!, handler: {
+        let titleZA = UIAlertAction(title: NSLocalizedString("title", comment: ""), style: UIAlertActionStyle.default, image: UIImage(named: "orderZA")!, handler: {
             (alert: UIAlertAction) -> Void in
             // Add Sort Descriptors
             let date = NSSortDescriptor(key: "name", ascending: true)
@@ -403,12 +389,11 @@ class OpenDocumentsTableViewController: UITableViewController, UISearchBarDelega
             (alert: UIAlertAction) -> Void in
         })
         
-        actionSheet.addAction(createdASC)
-        actionSheet.addAction(createdDESC)
         actionSheet.addAction(modifyASC)
-        actionSheet.addAction(modifyDESC)
         actionSheet.addAction(titleAZ)
         actionSheet.addAction(titleZA)
+        actionSheet.addAction(createdASC)
+        actionSheet.addAction(createdDESC)
         actionSheet.addAction(cancelAction)
         
         if let popoverController = actionSheet.popoverPresentationController {

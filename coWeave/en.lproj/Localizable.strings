@@ -64,4 +64,8 @@
 "add-page" = "Add page";
 "export-format" = "Choose format to export:";
 "order-action" = "Order actions";
+"oldest-first" = "Oldest first";
+"newest-first" = "Newest first";
+"last-opened" = "Last opened";
+
 
