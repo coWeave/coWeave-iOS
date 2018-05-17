@@ -19,8 +19,70 @@
 
 import Foundation
 import CoreData
-
+import Zip
 
 public class User: NSManagedObject {
-
+    func exportCoweaveURL() -> URL? {
+        var folderName = "export/\(self.name!)_\(arc4random())/";
+        
+        for d in self.documents! {
+            let doc = d as! Document
+            doc.exportToFileURL(folder: folderName);
+        }
+        
+        let documentsDirectory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
+        let exportPath = documentsDirectory.appendingPathComponent(folderName)
+        
+        do {
+            let formatter = DateFormatter()
+            // initially set the format based on your datepicker date
+            formatter.dateFormat = "dd.MM.yyyy_HH:mm:ss"
+            
+            let zipFilePath = try Zip.quickZipFiles([exportPath], fileName: "\(self.name!)_\(formatter.string(from: NSDate() as Date))") // Zip
+            
+            let fileManager = FileManager.default
+            do {
+                try fileManager.removeItem(atPath: exportPath.path)
+            } catch let error as NSError {
+                print("Ooops! Something went wrong: \(error)")
+            }
+            return zipFilePath
+            
+        } catch {
+            print("Something went wrong")
+        }
+        return exportPath
+    }
+    
+    
+    func exportZipURL() -> URL? {
+        var folderName = "export/\(self.name!)_\(arc4random())/";
+        for d in self.documents! {
+            let doc = d as! Document
+            doc.exportZipURL(folder: folderName);
+        }
+        
+        let documentsDirectory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
+        let exportPath = documentsDirectory.appendingPathComponent(folderName)
+        
+        do {
+            let formatter = DateFormatter()
+            // initially set the format based on your datepicker date
+            formatter.dateFormat = "dd.MM.yyyy_HH:mm:ss"
+            
+            let zipFilePath = try Zip.quickZipFiles([exportPath], fileName: "\(self.name!)_\(formatter.string(from: NSDate() as Date))") // Zip
+            
+            let fileManager = FileManager.default
+            do {
+                try fileManager.removeItem(atPath: exportPath.path)
+            } catch let error as NSError {
+                print("Ooops! Something went wrong: \(error)")
+            }
+            return zipFilePath
+            
+        } catch {
+            print("Something went wrong")
+        }
+        return exportPath
+    }
 }

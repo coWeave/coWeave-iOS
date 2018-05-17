@@ -158,10 +158,7 @@ class UserTableViewController: UITableViewController {
         actionSheet.addAction(cancelAction)
 
         if let popoverController = actionSheet.popoverPresentationController {
-            let buttonItemView: UIView! = self.shareButton.value(forKey: "view") as? UIView
-
-            popoverController.sourceView = buttonItemView
-            popoverController.sourceRect = buttonItemView.bounds
+            popoverController.barButtonItem = self.shareButton
         }
         self.present(actionSheet, animated: true, completion: nil)
     }

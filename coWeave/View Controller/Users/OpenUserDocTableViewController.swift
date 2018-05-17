@@ -27,6 +27,7 @@ class OpenUserDocTableViewController: UITableViewController, UISearchBarDelegate
     private var search = ""
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var orderButton: UIBarButtonItem!
+    @IBOutlet var shareButton: UIBarButtonItem!
 
     lazy var fetchedResultsController: NSFetchedResultsController<Document> = {
         // Initialize Fetch Request
@@ -353,6 +354,59 @@ class OpenUserDocTableViewController: UITableViewController, UISearchBarDelegate
         self.present(actionSheet, animated: true, completion: {
             
         })
+    }
+    
+    @IBAction func shareAction(_ sender: Any) {
+        let actionSheet: UIAlertController! = UIAlertController(title: nil, message: NSLocalizedString("export-format", comment: ""), preferredStyle: UIAlertControllerStyle.actionSheet)
+        
+        let coWeaveAction = UIAlertAction(title: "coWeave", style: UIAlertActionStyle.default, image: UIImage(named: "AppIcon")!, handler: {
+            (   alert: UIAlertAction) -> Void in
+            
+            guard let user = self.user,
+                let url = user.exportCoweaveURL() else {
+                    return
+            }
+            
+            let activityViewController = UIActivityViewController(
+                activityItems: [url],
+                applicationActivities: nil)
+            if let popoverPresentationController = activityViewController.popoverPresentationController {
+                popoverPresentationController.barButtonItem = (sender as! UIBarButtonItem)
+            }
+            self.present(activityViewController, animated: true, completion: nil)
+            
+        })
+        
+        let zipAction = UIAlertAction(title: "Zip", style: UIAlertActionStyle.default, image: UIImage(named: "zip")!, handler: {
+            (   alert: UIAlertAction) -> Void in
+            guard let user = self.user,
+                let url = user.exportZipURL() else {
+                    return
+            }
+            
+            let activityViewController = UIActivityViewController(
+                activityItems: [url],
+                applicationActivities: nil)
+            if let popoverPresentationController = activityViewController.popoverPresentationController {
+                popoverPresentationController.barButtonItem = (sender as! UIBarButtonItem)
+            }
+            self.present(activityViewController, animated: true, completion: nil)
+            
+        })
+        
+        let cancelAction = UIAlertAction(title: NSLocalizedString("cancel", comment: ""), style: UIAlertActionStyle.cancel, handler: {
+            (alert: UIAlertAction) -> Void in
+        })
+        
+        
+        actionSheet.addAction(coWeaveAction)
+        actionSheet.addAction(zipAction)
+        actionSheet.addAction(cancelAction)
+        
+        if let popoverController = actionSheet.popoverPresentationController {
+            popoverController.barButtonItem = self.shareButton
+        }
+        self.present(actionSheet, animated: true, completion: nil)
     }
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
