@@ -24,8 +24,10 @@ import Firebase
 class OpenDocumentsTableViewController: UITableViewController, UISearchBarDelegate {
     var managedObjectContext: NSManagedObjectContext!
     private var search = ""
+    private var userInclude = true
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var orderButton: UIBarButtonItem!
+    @IBOutlet var userCheckButton: UIBarButtonItem!
     
     lazy var fetchedResultsController: NSFetchedResultsController<Document> = {
         // Initialize Fetch Request
@@ -279,7 +281,27 @@ class OpenDocumentsTableViewController: UITableViewController, UISearchBarDelega
         }
         self.tableView.reloadData()
     }
-
+    @IBAction func userIncludeAction(_ sender: Any) {
+        var predicate:NSPredicate? = nil
+        if userInclude {
+            predicate = NSPredicate(format: "user == nil")
+            self.userCheckButton.image = UIImage(named: "user_not_check")
+            userInclude = false
+        } else {
+            predicate = NSPredicate(format: "(user != nil) OR (user == nil)")
+            self.userCheckButton.image = UIImage(named: "user_check")
+            userInclude = true
+        }
+        fetchedResultsController.fetchRequest.predicate = predicate
+        do {
+            try self.fetchedResultsController.performFetch()
+        } catch {
+            let fetchError = error as NSError
+            print("\(fetchError), \(fetchError.userInfo)")
+        }
+        self.tableView.reloadData()
+    }
+    
     @IBAction func orderAction(_ sender: Any) {
         Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
             AnalyticsParameterItemID: "OpenOrderAction" as NSObject,
@@ -390,8 +412,7 @@ class OpenDocumentsTableViewController: UITableViewController, UISearchBarDelega
         actionSheet.addAction(cancelAction)
         
         if let popoverController = actionSheet.popoverPresentationController {
-            popoverController.sourceView = orderButton.customView
-            popoverController.sourceRect = (orderButton.customView?.bounds)!
+            popoverController.barButtonItem = orderButton
         }
         self.present(actionSheet, animated: true, completion: {
             

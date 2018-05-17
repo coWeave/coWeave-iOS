@@ -901,16 +901,24 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Documents" id="kmo-Uo-jI1">
-                        <barButtonItem key="rightBarButtonItem" image="order" id="Lff-Z6-AVD">
-                            <connections>
-                                <action selector="orderAction:" destination="HdL-jE-nDp" id="zxt-Ff-rlT"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="order" id="Lff-Z6-AVD">
+                                <connections>
+                                    <action selector="orderAction:" destination="HdL-jE-nDp" id="zxt-Ff-rlT"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="user_check" id="RUO-vC-uf7">
+                                <connections>
+                                    <action selector="userIncludeAction:" destination="HdL-jE-nDp" id="9NK-pm-Nhk"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="orderButton" destination="Lff-Z6-AVD" id="6fn-ys-OeF"/>
                         <outlet property="searchBar" destination="N9c-Ix-Z9B" id="0lN-sY-xzf"/>
+                        <outlet property="userCheckButton" destination="RUO-vC-uf7" id="QdY-qW-QUo"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jzu-Md-qe4" userLabel="First Responder" sceneMemberID="firstResponder"/>
