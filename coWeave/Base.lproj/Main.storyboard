@@ -352,7 +352,7 @@
                                     <segue destination="ivf-b4-6EC" kind="show" identifier="modify" id="aXj-4z-tcd"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem systemItem="action" id="FsM-dR-cDT">
+                            <barButtonItem image="export" id="FsM-dR-cDT">
                                 <connections>
                                     <action selector="shareDocument:" destination="bgG-Ip-yWe" id="KAZ-yg-M68"/>
                                 </connections>
@@ -1066,9 +1066,9 @@
                         <viewLayoutGuide key="safeArea" id="l44-HX-Zij"/>
                     </view>
                     <navigationItem key="navigationItem" title="Document" id="sc6-tb-3Mf">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="AB1-0H-QFn">
+                        <barButtonItem key="leftBarButtonItem" image="close" id="AB1-0H-QFn">
                             <connections>
-                                <segue destination="TcU-2a-MRU" kind="presentation" identifier="close" modalTransitionStyle="coverVertical" id="L6g-ar-dGb"/>
+                                <segue destination="TcU-2a-MRU" kind="presentation" identifier="close" modalTransitionStyle="crossDissolve" id="L6g-ar-dGb"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" enabled="NO" image="play" id="tfE-xL-kpk">
@@ -1580,9 +1580,11 @@
         <image name="brownCircle" width="995" height="995"/>
         <image name="camera" width="33" height="33"/>
         <image name="cameraroll" width="33" height="33"/>
+        <image name="close" width="25" height="25"/>
         <image name="created" width="25" height="25"/>
         <image name="document" width="25" height="25"/>
         <image name="draw" width="33" height="33"/>
+        <image name="export" width="25" height="25"/>
         <image name="greenCircle" width="995" height="995"/>
         <image name="left" width="25" height="25"/>
         <image name="logo_black" width="475" height="125"/>
