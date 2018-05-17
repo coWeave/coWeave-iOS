@@ -355,7 +355,7 @@ class OpenDocumentsTableViewController: UITableViewController, UISearchBarDelega
             self.orderButton.image = UIImage(named: "order12")
         })
         
-        let titleAZ = UIAlertAction(title: NSLocalizedString("title", comment: ""), style: UIAlertActionStyle.default, image: UIImage(named: "orderAZ")!, handler: {
+        let titleAZ = UIAlertAction(title: NSLocalizedString("title", comment: "")+" A-Z", style: UIAlertActionStyle.default, image: UIImage(named: "orderAZ")!, handler: {
             (alert: UIAlertAction) -> Void in
             // Add Sort Descriptors
             let date = NSSortDescriptor(key: "name", ascending: false)
@@ -370,7 +370,7 @@ class OpenDocumentsTableViewController: UITableViewController, UISearchBarDelega
             self.orderButton.image = UIImage(named: "orderAZ")
         })
         
-        let titleZA = UIAlertAction(title: NSLocalizedString("title", comment: ""), style: UIAlertActionStyle.default, image: UIImage(named: "orderZA")!, handler: {
+        let titleZA = UIAlertAction(title: NSLocalizedString("title", comment: "")+" Z-A", style: UIAlertActionStyle.default, image: UIImage(named: "orderZA")!, handler: {
             (alert: UIAlertAction) -> Void in
             // Add Sort Descriptors
             let date = NSSortDescriptor(key: "name", ascending: true)
