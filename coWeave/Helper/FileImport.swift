@@ -22,9 +22,9 @@ import CoreData
 
 class FileImport: NSObject {
     var managedObjectContext: NSManagedObjectContext!
-
+    
     // MARK: Keys
-
+    
     fileprivate enum Keys: String {
         case addedDate = "addedDate"
         case modifyDate = "modifyDate"
@@ -44,37 +44,37 @@ class FileImport: NSObject {
         case document = "document"
         case page = "page"
     }
-
-
+    
+    
     func importData(from url: URL) {
         // 1
         guard let dictionary = NSDictionary(contentsOf: url),
-              let doc = dictionary as? [String: AnyObject],
-              let name = doc[Keys.name.rawValue] as? String,
-              let addedDate = doc[Keys.addedDate.rawValue] as? NSDate,
-              let modifyDate = doc[Keys.modifyDate.rawValue] as? NSDate,
-              let template = doc[Keys.template.rawValue] as? Bool,
-              let user = doc[Keys.user.rawValue] as? String,
-              let group = doc[Keys.group.rawValue] as? String,
-              let pages = doc[Keys.pages.rawValue] as? [NSDictionary]
-                else {
-            return
+            let doc = dictionary as? [String: AnyObject],
+            let name = doc[Keys.name.rawValue] as? String,
+            let addedDate = doc[Keys.addedDate.rawValue] as? NSDate,
+            let modifyDate = doc[Keys.modifyDate.rawValue] as? NSDate,
+            let template = doc[Keys.template.rawValue] as? Bool,
+            let user = doc[Keys.user.rawValue] as? String,
+            let group = doc[Keys.group.rawValue] as? String,
+            let pages = doc[Keys.pages.rawValue] as? [NSDictionary]
+            else {
+                return
         }
-
+        
         // Create Entity
         let entity = NSEntityDescription.entity(forEntityName: "Document", in: self.managedObjectContext)
-
+        
         // Initialize Record
         let document = Document(entity: entity!, insertInto: self.managedObjectContext)
-
+        
         let formatter = DateFormatter()
         // initially set the format based on your datepicker date
         formatter.dateFormat = "dd.MM.yyyy"
-
+        
         document.addedDate = addedDate
         document.modifyDate = modifyDate
         document.name = (user == "none") ? name : "\(name) - \(user) (\(group))"
-
+        
         do {
             // Save Record
             try document.managedObjectContext?.save()
@@ -82,10 +82,10 @@ class FileImport: NSObject {
             let saveError = error as NSError
             print("\(saveError), \(saveError.userInfo)")
         }
-
-
+        
+        
         var previous: Page? = nil
-
+        
         for item in pages { // loop through data items
             let p = item as! [String: AnyObject]
             let addedDate = p[Keys.addedDate.rawValue] as? NSDate
@@ -94,45 +94,46 @@ class FileImport: NSObject {
             let title = p[Keys.title.rawValue] as? String
             let audio = p[Keys.audio.rawValue] as? NSData
             let imageData = p[Keys.image.rawValue] as? NSData
-
+            
             // Create Entity
             let entity = NSEntityDescription.entity(forEntityName: "Page", in: self.managedObjectContext)
-
+            
             // Initialize Record
             let pageAdd = Page(entity: entity!, insertInto: self.managedObjectContext)
-
+            
             pageAdd.addedDate = addedDate
             pageAdd.number = number
             pageAdd.title = (title == "none") ? nil : title
             pageAdd.document = document
             pageAdd.previous = previous
             pageAdd.audio = audio
-
+            
             if (imageData != nil) {
                 // Create Entity
                 let imageEntity = NSEntityDescription.entity(forEntityName: "Image", in: self.managedObjectContext)
-
+                
                 // Initialize Record
                 let image = Image(entity: imageEntity!, insertInto: self.managedObjectContext)
-
+                
                 image.addedDate = NSDate()
                 image.image = imageData
+                image.thumbnail = UIImagePNGRepresentation(resizeImage(image: imageValue, newWidth: 75))! as NSData
                 image.previous = nil
                 image.page = pageAdd
-
+                
                 pageAdd.image = image
             }
-
+            
             document.lastPage = pageAdd
-
+            
             if (previous != nil) {
                 previous!.next = pageAdd
             }
-
+            
             if (number == 1) {
                 document.firstPage = pageAdd
             }
-
+            
             do {
                 // Save Record
                 try pageAdd.managedObjectContext?.save()
@@ -141,13 +142,27 @@ class FileImport: NSObject {
                 print("\(saveError), \(saveError.userInfo)")
             }
             previous = pageAdd
-
+            
         }
-
+        
         do {
             try FileManager.default.removeItem(at: url)
         } catch {
             print("Failed to remove item from Inbox")
         }
+    }
+    
+    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
+        
+        let scale = newWidth / image.size.width
+        let newHeight = image.size.height * scale
+        
+        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+        
+        image.draw(in: CGRect(x: 0, y: 0,width: newWidth, height: newHeight))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
     }
 }
