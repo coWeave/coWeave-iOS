@@ -206,7 +206,6 @@ class OpenUserDocTableViewController: UITableViewController, UISearchBarDelegate
 
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
         print("searchText \(String(describing: searchBar.text))")
         self.search(searchString: searchBar.text!)
     }
@@ -225,7 +224,7 @@ class OpenUserDocTableViewController: UITableViewController, UISearchBarDelegate
     internal func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         searchBar.resignFirstResponder()
         searchBar.text = ""
-        fetchedResultsController.fetchRequest.predicate = nil
+        fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "user == %@", self.user)
         do {
             try self.fetchedResultsController.performFetch()
         } catch {
@@ -240,7 +239,9 @@ class OpenUserDocTableViewController: UITableViewController, UISearchBarDelegate
         self.search = searchString
         var predicate:NSPredicate? = nil
         if searchString.count != 0 {
-            predicate = NSPredicate(format: "(name BEGINSWITH [c] %@) OR (name CONTAINS [c] %@)", searchString, searchString)
+            predicate = NSPredicate(format: "((name BEGINSWITH [c] %@) OR (name CONTAINS [c] %@)) AND user == %@", searchString, searchString, self.user)
+        } else {
+            predicate = NSPredicate(format: "user == %@", self.user)
         }
         fetchedResultsController.fetchRequest.predicate = predicate
         do {
