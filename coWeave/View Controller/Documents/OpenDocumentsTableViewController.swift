@@ -120,7 +120,12 @@ class OpenDocumentsTableViewController: UITableViewController, UISearchBarDelega
             cell.pageTitle.text = document.name
             
             DispatchQueue.main.async(execute: { () -> Void in
-                cell.documentImage.image = (document.firstPage?.image?.thumbnail != nil) ? UIImage(data: (document.firstPage?.image!.thumbnail!)! as Data, scale: 1) : UIImage(named: "documentPlaceholder")
+                if (UserDefaults.standard.bool(forKey: "displayPictures")) {
+                    cell.documentImage.image = (document.firstPage?.image?.thumbnail != nil) ? UIImage(data: (document.firstPage?.image!.thumbnail!)! as Data, scale: 1) : UIImage(named: "documentPlaceholder")
+                } else {
+                    cell.documentImage.image = UIImage(named: "documentPlaceholder")
+                }
+               
             })
             
             cell.pageDate.text = "\(formatter.string(from: document.addedDate! as Date))"
@@ -132,7 +137,11 @@ class OpenDocumentsTableViewController: UITableViewController, UISearchBarDelega
             cell.pageTitle.text = document.name
             
             DispatchQueue.main.async(execute: { () -> Void in
-                cell.documentImage.image = (document.firstPage?.image?.thumbnail != nil) ? UIImage(data: (document.firstPage?.image!.thumbnail!)! as Data, scale: 1) : UIImage(named: "documentPlaceholder")
+                if (UserDefaults.standard.bool(forKey: "displayPictures")) {
+                    cell.documentImage.image = (document.firstPage?.image?.thumbnail != nil) ? UIImage(data: (document.firstPage?.image!.thumbnail!)! as Data, scale: 1) : UIImage(named: "documentPlaceholder")
+                } else {
+                    cell.documentImage.image = UIImage(named: "documentPlaceholder")
+                }
             })
             
             cell.author.text = document.user!.name! + " (" + document.user!.group!.name! + ")"

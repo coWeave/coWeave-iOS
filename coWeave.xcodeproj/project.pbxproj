@@ -17,6 +17,9 @@
 		052982C91FBDE9D2002C0ACA /* coWeaveStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052982C81FBDE9D2002C0ACA /* coWeaveStack.swift */; };
 		0533C7AF1FBE39A800824753 /* OpenDocumentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0533C7AE1FBE39A800824753 /* OpenDocumentsTableViewController.swift */; };
 		0547AC361FBCC39600432850 /* iOSPhotoEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0547AC371FBCC39600432850 /* iOSPhotoEditor.framework */; };
+		055FA8AC20ADB1EA00FDED09 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055FA8AB20ADB1EA00FDED09 /* FirebaseCore.framework */; };
+		055FA8AE20ADB1EA00FDED09 /* Pods_coWeaveTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055FA8AD20ADB1EA00FDED09 /* Pods_coWeaveTests.framework */; };
+		055FA8B020ADB1EA00FDED09 /* Pods_coWeaveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055FA8AF20ADB1EA00FDED09 /* Pods_coWeaveUITests.framework */; };
 		056252FE1FBF79C2005B92D9 /* ModifyDocumentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056252FD1FBF79C2005B92D9 /* ModifyDocumentTableViewController.swift */; };
 		056253001FBF9B4D005B92D9 /* TemplateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056252FF1FBF9B4D005B92D9 /* TemplateTableViewController.swift */; };
 		056253021FBFA81C005B92D9 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056253011FBFA81C005B92D9 /* PreviewViewController.swift */; };
@@ -75,8 +78,10 @@
 		05F70E4B1FBCF1FB007FD9E4 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F70E411FBCF1FB007FD9E4 /* User+CoreDataClass.swift */; };
 		05F70E4C1FBCF1FB007FD9E4 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F70E421FBCF1FB007FD9E4 /* User+CoreDataProperties.swift */; };
 		196E91C88B1F65655F0D0FCA /* Pods_coWeaveTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE6F288A4D9A25A4A21B71DE /* Pods_coWeaveTests.framework */; };
-		5EC1B95700C954AA274A734C /* Pods_coWeave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05D83758204C7C57005AA87D /* Pods_coWeave.framework */; };
+		80EA4294C7279A2BF13011C5 /* Pods_coWeaveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055FA8AF20ADB1EA00FDED09 /* Pods_coWeaveUITests.framework */; };
 		9C3D9D69500E599A3B7854CA /* Pods_coWeaveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD31AD36C733E32D188F60BF /* Pods_coWeaveUITests.framework */; };
+		DF22B9BD3DAC892326F3A503 /* Pods_coWeaveTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055FA8AD20ADB1EA00FDED09 /* Pods_coWeaveTests.framework */; };
+		E824A88277322D5FA3A43F85 /* Pods_coWeave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05D83758204C7C57005AA87D /* Pods_coWeave.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +119,9 @@
 		0547AC371FBCC39600432850 /* iOSPhotoEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSPhotoEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0547AC391FBCC39900432850 /* Fusuma.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Fusuma.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		055FA8AA20AD71FA00FDED09 /* coWeave 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "coWeave 6.xcdatamodel"; sourceTree = "<group>"; };
+		055FA8AB20ADB1EA00FDED09 /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		055FA8AD20ADB1EA00FDED09 /* Pods_coWeaveTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_coWeaveTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		055FA8AF20ADB1EA00FDED09 /* Pods_coWeaveUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_coWeaveUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		056252FC1FBF30B8005B92D9 /* coWeave 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "coWeave 3.xcdatamodel"; sourceTree = "<group>"; };
 		056252FD1FBF79C2005B92D9 /* ModifyDocumentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyDocumentTableViewController.swift; sourceTree = "<group>"; };
 		056252FF1FBF9B4D005B92D9 /* TemplateTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTableViewController.swift; sourceTree = "<group>"; };
@@ -203,6 +211,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				055FA8AC20ADB1EA00FDED09 /* FirebaseCore.framework in Frameworks */,
+				055FA8AE20ADB1EA00FDED09 /* Pods_coWeaveTests.framework in Frameworks */,
+				055FA8B020ADB1EA00FDED09 /* Pods_coWeaveUITests.framework in Frameworks */,
 				052772D51FCDE266003F4042 /* Zip.framework in Frameworks */,
 				052772D01FCDBF33003F4042 /* GTMSessionFetcher.framework in Frameworks */,
 				052772D11FCDBF33003F4042 /* Protobuf.framework in Frameworks */,
@@ -210,7 +221,7 @@
 				05F10D3B1FC0FAB80010F718 /* Localize_Swift.framework in Frameworks */,
 				05F10D3C1FC0FAB80010F718 /* nanopb.framework in Frameworks */,
 				0547AC361FBCC39600432850 /* iOSPhotoEditor.framework in Frameworks */,
-				5EC1B95700C954AA274A734C /* Pods_coWeave.framework in Frameworks */,
+				E824A88277322D5FA3A43F85 /* Pods_coWeave.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +237,7 @@
 				05D83741204C7C51005AA87D /* Protobuf.framework in Frameworks */,
 				05D83742204C7C51005AA87D /* Zip.framework in Frameworks */,
 				196E91C88B1F65655F0D0FCA /* Pods_coWeaveTests.framework in Frameworks */,
+				DF22B9BD3DAC892326F3A503 /* Pods_coWeaveTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +253,7 @@
 				05D83751204C7C57005AA87D /* Protobuf.framework in Frameworks */,
 				05D83752204C7C57005AA87D /* Zip.framework in Frameworks */,
 				9C3D9D69500E599A3B7854CA /* Pods_coWeaveUITests.framework in Frameworks */,
+				80EA4294C7279A2BF13011C5 /* Pods_coWeaveUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +480,9 @@
 		FAEF7FE42CBCC25352F453F3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				055FA8AB20ADB1EA00FDED09 /* FirebaseCore.framework */,
+				055FA8AD20ADB1EA00FDED09 /* Pods_coWeaveTests.framework */,
+				055FA8AF20ADB1EA00FDED09 /* Pods_coWeaveUITests.framework */,
 				05D83753204C7C57005AA87D /* GoogleToolboxForMac.framework */,
 				05D83754204C7C57005AA87D /* GTMSessionFetcher.framework */,
 				05D83755204C7C57005AA87D /* iOSPhotoEditor.framework */,
@@ -569,7 +585,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Benoît Frisch";
 				TargetAttributes = {
 					056C70E01FBB496D00E79CA1 = {
@@ -936,6 +952,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -943,6 +960,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -994,6 +1012,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1001,6 +1020,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1038,6 +1058,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 82T63N97ZX;
+				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"${PODS_ROOT}/Firebase/Core/Sources",
@@ -1069,6 +1090,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 82T63N97ZX;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/iOSPhotoEditor\"",

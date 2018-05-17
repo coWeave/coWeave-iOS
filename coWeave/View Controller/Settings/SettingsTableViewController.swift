@@ -29,12 +29,14 @@ class SettingsTableViewController: UITableViewController {
     @IBOutlet var versionLabel: UILabel!
     @IBOutlet var languageButton: UIButton!
     @IBOutlet var pictureLibrarySwitch: UISwitch!
+    @IBOutlet var displayPictures: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.rowHeight = 55.0
 
         pictureLibrarySwitch.setOn(UserDefaults.standard.bool(forKey: "savePictures"), animated: false)
+        displayPictures.setOn(UserDefaults.standard.bool(forKey: "displayPictures"), animated: false)
 
         Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
                 AnalyticsParameterItemID: "Settings" as NSObject,
@@ -74,6 +76,10 @@ class SettingsTableViewController: UITableViewController {
 
     @IBAction func savePictureSaveLibrary(_ sender: Any) {
         UserDefaults.standard.set(pictureLibrarySwitch.isOn, forKey: "savePictures")
+    }
+    
+    @IBAction func saveDisplayPictures(_ sender: Any) {
+        UserDefaults.standard.set(displayPictures.isOn, forKey: "displayPictures")
     }
     
     override func didReceiveMemoryWarning() {

@@ -749,7 +749,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="prominent" placeholder="Search Document Name..." translucent="NO" id="N9c-Ix-Z9B">
+                        <searchBar key="tableHeaderView" contentMode="redraw" misplaced="YES" searchBarStyle="prominent" placeholder="Search Document Name..." translucent="NO" id="N9c-Ix-Z9B">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="barTintColor" red="0.54901960780000003" green="0.77647058820000003" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1180,7 +1180,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="prominent" placeholder="Search Document Name..." translucent="NO" id="XJd-CF-pum">
+                        <searchBar key="tableHeaderView" contentMode="redraw" misplaced="YES" searchBarStyle="prominent" placeholder="Search Document Name..." translucent="NO" id="XJd-CF-pum">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="barTintColor" red="0.54901960780000003" green="0.77647058820000003" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1464,12 +1464,43 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="60" id="AYh-kF-wBu">
+                                        <rect key="frame" x="0.0" y="218.33333333333334" width="414" height="60.000000000000028"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AYh-kF-wBu" id="hT6-V1-0hL">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="59.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Show images in Open Documents List?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="SdP-4z-bXk">
+                                                    <rect key="frame" x="20" y="8" width="275" height="44"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cIL-aK-f28">
+                                                    <rect key="frame" x="347" y="15" width="51" height="31"/>
+                                                    <color key="onTintColor" red="0.54901960780000003" green="0.77647058820000003" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <connections>
+                                                        <action selector="saveDisplayPictures:" destination="yop-er-tyM" eventType="valueChanged" id="VFv-h6-rFB"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="cIL-aK-f28" firstAttribute="leading" secondItem="SdP-4z-bXk" secondAttribute="trailing" constant="65" id="0KF-25-bnb"/>
+                                                <constraint firstItem="SdP-4z-bXk" firstAttribute="centerY" secondItem="cIL-aK-f28" secondAttribute="centerY" id="CsS-Kz-i0t"/>
+                                                <constraint firstItem="SdP-4z-bXk" firstAttribute="leading" secondItem="hT6-V1-0hL" secondAttribute="leadingMargin" id="Tj2-vx-ktN"/>
+                                                <constraint firstItem="SdP-4z-bXk" firstAttribute="centerY" secondItem="hT6-V1-0hL" secondAttribute="centerY" id="cOL-1m-eYA"/>
+                                                <constraint firstItem="SdP-4z-bXk" firstAttribute="top" secondItem="hT6-V1-0hL" secondAttribute="topMargin" constant="-3" id="mJZ-r1-v3U"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="cIL-aK-f28" secondAttribute="trailing" constant="-2" id="ovG-Mz-YJ5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="ABOUT" footerTitle="coWeave est une marque enregistrée sous le numéro 1368870 dans le registre des marques Benelux." id="rUo-me-BXt">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="66" id="eki-Yq-jpW">
-                                        <rect key="frame" x="0.0" y="273.66666666666669" width="414" height="66"/>
+                                        <rect key="frame" x="0.0" y="333.66666666666669" width="414" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eki-Yq-jpW" id="3w5-Wv-QNq">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="65.666666666666671"/>
@@ -1491,7 +1522,7 @@
                                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="QQ6-mW-D7m" style="IBUITableViewCellStyleDefault" id="Ar7-gI-hcB">
-                                        <rect key="frame" x="0.0" y="339.66666666666669" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="399.66666666666674" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ar7-gI-hcB" id="ciq-zc-LnS">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
@@ -1512,7 +1543,7 @@
                             <tableViewSection headerTitle="DEVELOPMENT" footerTitle="© 2017-2018 Benoît FRISCH" id="ETg-6Q-FsH">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="5Nk-Dl-IKx" detailTextLabel="Wox-cT-boM" style="IBUITableViewCellStyleValue1" id="hJN-ME-vpo">
-                                        <rect key="frame" x="0.0" y="475" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="535.00000000000011" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hJN-ME-vpo" id="gBi-U6-MdJ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
@@ -1536,7 +1567,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="XPV-OY-3rZ" detailTextLabel="QCn-MD-2jW" style="IBUITableViewCellStyleValue1" id="mdJ-x6-DUU">
-                                        <rect key="frame" x="0.0" y="519" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="579.00000000000011" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mdJ-x6-DUU" id="bdK-t8-ti4">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
@@ -1571,6 +1602,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="TableView" destination="a5l-Og-iCr" id="H0N-Ti-Zn8"/>
+                        <outlet property="displayPictures" destination="cIL-aK-f28" id="PYZ-qE-k4J"/>
                         <outlet property="languageButton" destination="dI7-FT-LOZ" id="ukO-00-vNE"/>
                         <outlet property="pictureLibrarySwitch" destination="8mf-gx-g9J" id="feP-FT-9aj"/>
                         <outlet property="versionLabel" destination="QQ6-mW-D7m" id="mOG-bo-kfj"/>
