@@ -31,6 +31,7 @@ class DocumentsViewController: UIViewController {
         let imageView = UIImageView(image: logo)
         imageView.contentMode = .scaleAspectFit
         self.navigationItem.titleView = imageView
+        
 
         Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
                 AnalyticsParameterItemID: "AddOpenView" as NSObject,

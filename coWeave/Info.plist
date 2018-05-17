@@ -41,6 +41,8 @@
 	<string>Camera</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Micro</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Camera</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Library</string>
 	<key>UILaunchStoryboardName</key>

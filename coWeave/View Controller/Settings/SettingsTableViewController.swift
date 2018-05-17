@@ -28,11 +28,13 @@ class SettingsTableViewController: UITableViewController {
     let availableLanguages = Localize.availableLanguages()
     @IBOutlet var versionLabel: UILabel!
     @IBOutlet var languageButton: UIButton!
-
+    @IBOutlet var pictureLibrarySwitch: UISwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.rowHeight = 55.0
 
+        pictureLibrarySwitch.setOn(UserDefaults.standard.bool(forKey: "savePictures"), animated: false)
 
         Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
                 AnalyticsParameterItemID: "Settings" as NSObject,
@@ -70,6 +72,10 @@ class SettingsTableViewController: UITableViewController {
         self.present(actionSheet, animated: true, completion: nil)
     }
 
+    @IBAction func savePictureSaveLibrary(_ sender: Any) {
+        UserDefaults.standard.set(pictureLibrarySwitch.isOn, forKey: "savePictures")
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

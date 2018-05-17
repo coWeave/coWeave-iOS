@@ -628,6 +628,13 @@ class DocumentDetailViewController: UIViewController, UINavigationControllerDele
         pageImage = createImage(imageValue: image, previous: pageImage, page: self.page)
         updateImageControls(image: pageImage)
         self.drawText()
+        if (UserDefaults.standard.bool(forKey: "savePictures")) {
+            UIImageWriteToSavedPhotosAlbum(self.image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+        }
+    }
+    
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        print("Photo Saved Successfully")
     }
 
     func createImage(imageValue: UIImage, previous: Image? = nil, page: Page) -> Image {
