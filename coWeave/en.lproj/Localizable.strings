@@ -34,7 +34,7 @@
 "add-user" = "Add user";
 "delete-error-docs" = "Please delete all documents from user.";
 "documents" = "Documents";
-"no-documents" = "No unassigned documents available!";
+"no-documents" = "No documents available!";
 "last-opened" = "Last opened";
 "created" = "Created";
 "modify-title" = "Modify title";

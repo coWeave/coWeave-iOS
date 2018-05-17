@@ -94,13 +94,13 @@ class OpenDocumentsTableViewController: UITableViewController, UISearchBarDelega
         return fetchedResultsController.fetchedObjects!.count
     }
 
-    /*override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if (fetchedResultsController.fetchedObjects!.count == 0) {
-            return "\(NSLocalizedString("no-documents", comment: ""))\n\n\(NSLocalizedString("documents-info", comment: ""))"
+            return "\(NSLocalizedString("no-documents", comment: ""))"
         } else {
-            return NSLocalizedString("documents-info", comment: "")
+            return ""
         }
-    }*/
+    }
     
     override func tableView(_ tableView: UITableView,
                    heightForRowAt indexPath: IndexPath) -> CGFloat {
