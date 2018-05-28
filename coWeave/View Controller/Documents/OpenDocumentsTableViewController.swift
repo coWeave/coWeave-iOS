@@ -367,7 +367,7 @@ class OpenDocumentsTableViewController: UITableViewController, UISearchBarDelega
         let titleAZ = UIAlertAction(title: NSLocalizedString("title", comment: "")+" A-Z", style: UIAlertActionStyle.default, image: UIImage(named: "orderAZ")!, handler: {
             (alert: UIAlertAction) -> Void in
             // Add Sort Descriptors
-            let date = NSSortDescriptor(key: "name", ascending: false)
+            let date = NSSortDescriptor(key: "name", ascending: true)
             self.fetchedResultsController.fetchRequest.sortDescriptors = [date]
             do {
                 try self.fetchedResultsController.performFetch()
@@ -382,7 +382,7 @@ class OpenDocumentsTableViewController: UITableViewController, UISearchBarDelega
         let titleZA = UIAlertAction(title: NSLocalizedString("title", comment: "")+" Z-A", style: UIAlertActionStyle.default, image: UIImage(named: "orderZA")!, handler: {
             (alert: UIAlertAction) -> Void in
             // Add Sort Descriptors
-            let date = NSSortDescriptor(key: "name", ascending: true)
+            let date = NSSortDescriptor(key: "name", ascending: false)
             self.fetchedResultsController.fetchRequest.sortDescriptors = [date]
             do {
                 try self.fetchedResultsController.performFetch()

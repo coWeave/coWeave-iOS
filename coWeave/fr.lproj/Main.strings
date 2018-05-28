@@ -30,7 +30,7 @@
 "ETG-Pz-kaS.text" = "99";
 
 /* Class = "UITableViewSection"; footerTitle = "© 2017 Benoît FRISCH\n\n\nIcons from icons8.com"; ObjectID = "ETg-6Q-FsH"; */
-"ETg-6Q-FsH.footerTitle" = "© 2017 Benoît FRISCH\n\n\nIcons from icons8.com";
+"ETg-6Q-FsH.footerTitle" = "© 2017-2018 Benoît FRISCH";
 
 /* Class = "UITableViewSection"; headerTitle = "Développement"; ObjectID = "ETg-6Q-FsH"; */
 "ETg-6Q-FsH.headerTitle" = "Développement";
@@ -178,3 +178,15 @@
 
 /*Language title*/
 "DP5-aH-30T.text" = "Pour changer la langue, changez la langue de l'appareil.";
+
+/* Photos Settings */
+"gU7-uI-eYP.text" = "Enregistrer les photos dans l'album photo de l'appareil?";
+
+/* Open Doc Images */
+"SdP-4z-bXk.text" = "Afficher l'image d'aperçu dans la liste des documents?";
+
+/* Trademark */
+"rUo-me-BXt.footerTitle" = "coWeave est une marque enregistrée sous le numéro 1368870 auprès de l'Office Benelux de la Propriété Intellectuelle (BOIP).";
+
+/* Language Switcher */
+"dI7-FT-LOZ.title" = "Modifier la langue";
