@@ -18,8 +18,6 @@
 		0533C7AF1FBE39A800824753 /* OpenDocumentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0533C7AE1FBE39A800824753 /* OpenDocumentsTableViewController.swift */; };
 		0547AC361FBCC39600432850 /* iOSPhotoEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0547AC371FBCC39600432850 /* iOSPhotoEditor.framework */; };
 		055FA8AC20ADB1EA00FDED09 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055FA8AB20ADB1EA00FDED09 /* FirebaseCore.framework */; };
-		055FA8AE20ADB1EA00FDED09 /* Pods_coWeaveTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055FA8AD20ADB1EA00FDED09 /* Pods_coWeaveTests.framework */; };
-		055FA8B020ADB1EA00FDED09 /* Pods_coWeaveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055FA8AF20ADB1EA00FDED09 /* Pods_coWeaveUITests.framework */; };
 		056252FE1FBF79C2005B92D9 /* ModifyDocumentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056252FD1FBF79C2005B92D9 /* ModifyDocumentTableViewController.swift */; };
 		056253001FBF9B4D005B92D9 /* TemplateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056252FF1FBF9B4D005B92D9 /* TemplateTableViewController.swift */; };
 		056253021FBFA81C005B92D9 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056253011FBFA81C005B92D9 /* PreviewViewController.swift */; };
@@ -81,7 +79,6 @@
 		80EA4294C7279A2BF13011C5 /* Pods_coWeaveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055FA8AF20ADB1EA00FDED09 /* Pods_coWeaveUITests.framework */; };
 		9C3D9D69500E599A3B7854CA /* Pods_coWeaveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD31AD36C733E32D188F60BF /* Pods_coWeaveUITests.framework */; };
 		DF22B9BD3DAC892326F3A503 /* Pods_coWeaveTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055FA8AD20ADB1EA00FDED09 /* Pods_coWeaveTests.framework */; };
-		E824A88277322D5FA3A43F85 /* Pods_coWeave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05D83758204C7C57005AA87D /* Pods_coWeave.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -212,8 +209,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				055FA8AC20ADB1EA00FDED09 /* FirebaseCore.framework in Frameworks */,
-				055FA8AE20ADB1EA00FDED09 /* Pods_coWeaveTests.framework in Frameworks */,
-				055FA8B020ADB1EA00FDED09 /* Pods_coWeaveUITests.framework in Frameworks */,
 				052772D51FCDE266003F4042 /* Zip.framework in Frameworks */,
 				052772D01FCDBF33003F4042 /* GTMSessionFetcher.framework in Frameworks */,
 				052772D11FCDBF33003F4042 /* Protobuf.framework in Frameworks */,
@@ -221,7 +216,6 @@
 				05F10D3B1FC0FAB80010F718 /* Localize_Swift.framework in Frameworks */,
 				05F10D3C1FC0FAB80010F718 /* nanopb.framework in Frameworks */,
 				0547AC361FBCC39600432850 /* iOSPhotoEditor.framework in Frameworks */,
-				E824A88277322D5FA3A43F85 /* Pods_coWeave.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
