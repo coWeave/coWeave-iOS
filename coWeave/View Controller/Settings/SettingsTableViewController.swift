@@ -81,6 +81,29 @@ class SettingsTableViewController: UITableViewController {
     @IBAction func saveDisplayPictures(_ sender: Any) {
         UserDefaults.standard.set(displayPictures.isOn, forKey: "displayPictures")
     }
+    @IBAction func macUrl(_ sender: Any) {
+        guard let url = URL(string: "https://itunes.apple.com/lu/app/coweave-viewer/id1315689686?ls=1&mt=12") else {
+            return //be safe
+        }
+        
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+    }
+    
+    @IBAction func github(_ sender: Any) {
+        guard let url = URL(string: "https://github.com/coWeave") else {
+            return //be safe
+        }
+        
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
